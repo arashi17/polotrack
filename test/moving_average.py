@@ -29,4 +29,4 @@ def moving_average(timeframe, start, end, data):
     for i in range(total_samples - number_of_samples):
         avg_array[number_of_samples + i] = cum_sum[number_of_samples + i] - cum_sum[i]
     avg_array /= number_of_samples
-    return avg_array
+    return data_array, avg_array
