@@ -25,8 +25,8 @@ def moving_average(timeframe, start, end, data):
     for i in range(total_samples):
         data_array[i] = data[start_index + i]['weightedAverage']
     cum_sum = np.cumsum(data_array)
-    avg_array = np.zeros(total_samples - number_of_samples)
-    for i in range(np.shape(avg_array)[0]):
-        avg_array[i] = cum_sum[number_of_samples + i] - cum_sum[i]
+    avg_array = np.zeros(total_samples)
+    for i in range(total_samples - number_of_samples):
+        avg_array[number_of_samples + i] = cum_sum[number_of_samples + i] - cum_sum[i]
     avg_array /= number_of_samples
     return avg_array
